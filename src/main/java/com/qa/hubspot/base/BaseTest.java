@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 
 import com.qa.hubspot.pages.ContactsPage;
 import com.qa.hubspot.pages.DealsPage;
+import com.qa.hubspot.pages.DemoPage;
 import com.qa.hubspot.pages.HomePage;
 import com.qa.hubspot.pages.LoginPage;
 
@@ -24,6 +25,7 @@ public class BaseTest {
 	public HomePage homePage;
 	public ContactsPage contactsPage;
 	public DealsPage dealsPage;
+	public DemoPage demoPage;
 	
 	@Parameters({"browser","url"})
 	@BeforeTest

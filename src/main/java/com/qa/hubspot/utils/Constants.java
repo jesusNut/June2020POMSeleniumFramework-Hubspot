@@ -11,6 +11,7 @@ public class Constants {
 	public static final String DEALS_PAGE_HEADER = "Deals";
 	public static final String CONTACTS_SHEET_NAME = "Contacts";
 	public static final String DEALS_SHEET_NAME = "Deals";
+	public static final String DEMO_STRING_FOR_DEMO_CLASS = "boombrow..";
 	
 
 }

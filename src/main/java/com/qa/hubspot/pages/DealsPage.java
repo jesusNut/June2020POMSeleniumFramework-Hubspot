@@ -22,7 +22,8 @@ public class DealsPage extends BasePage {
 	private By amountTextBox = By.xpath("//input[@data-field='amount']");
 	private By createDealSecondaryButton = By.xpath("//button[@data-selenium-test='base-dialog-confirm-btn']");
 //	private By nextPageTitleVerifier = By.xpath("//span[@data-selenium-test='highlightTitle']");
-	private By navigateBackToAllDealsPage = By.xpath("(//i18n-string[@data-key='profileHeader.backButton.DEAL'])[position()='2']");
+	private By navigateBackToAllDealsPage = By
+			.xpath("(//i18n-string[@data-key='profileHeader.backButton.DEAL'])[position()='2']");
 
 	// constructor of the page
 
@@ -49,7 +50,7 @@ public class DealsPage extends BasePage {
 	}
 
 	public void createDeal(String dealName, String dealStage, String amount) {
-
+		System.out.println("Creating deal now.....");
 		elementUtil.waitForSingleElementToBeVisible(createDealPrimaryButton, 10);
 		elementUtil.doClick(createDealPrimaryButton);
 		elementUtil.waitForSingleElementToBeVisible(dealNameTextBox, 10).sendKeys(dealName);
@@ -60,7 +61,7 @@ public class DealsPage extends BasePage {
 //		elementUtil.waitForSingleElementToBeVisible(nextPageTitleVerifier, 10);
 //		return elementUtil.doGetText(nextPageTitleVerifier);
 		elementUtil.waitForSingleElementToBeVisible(navigateBackToAllDealsPage, 22).click();
-		
+
 	}
 
 }
