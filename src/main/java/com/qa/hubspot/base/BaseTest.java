@@ -15,6 +15,7 @@ import com.qa.hubspot.pages.DealsPage;
 import com.qa.hubspot.pages.DemoPage;
 import com.qa.hubspot.pages.HomePage;
 import com.qa.hubspot.pages.LoginPage;
+import com.qa.hubspot.pages.ProfileDemoPage;
 
 public class BaseTest {
 
@@ -26,10 +27,11 @@ public class BaseTest {
 	public ContactsPage contactsPage;
 	public DealsPage dealsPage;
 	public DemoPage demoPage;
-	
-	@Parameters({"browser","url"})
+	public ProfileDemoPage profileDemoPage;
+
+	@Parameters({ "browser", "url" })
 	@BeforeTest
-	public void setUp(@Optional ("chrome") String browserName,@Optional ("https://app.hubspot.com/") String url) {
+	public void setUp(@Optional("chrome") String browserName, @Optional("https://app.hubspot.com/") String url) {
 
 		basePage = new BasePage();
 		prop = basePage.init_prop();
@@ -44,6 +46,5 @@ public class BaseTest {
 
 		driver.quit();
 	}
-
 
 }
