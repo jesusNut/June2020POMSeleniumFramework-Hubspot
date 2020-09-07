@@ -7,7 +7,7 @@ public class ProfileDemoPage extends BasePage {
 	public String provideAStringProfile() {
 
 		return "jetha laal";
-
+                System.out.println("i am the xtra code :)");
 	}
 	
 }
