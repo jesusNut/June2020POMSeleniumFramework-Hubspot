@@ -24,7 +24,7 @@
 	</test> -->
 
 	<test name="Home page Test">
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.HomePageTest" />
