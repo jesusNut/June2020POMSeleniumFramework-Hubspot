@@ -25,7 +25,7 @@
 		</classes>
 	</test>
 
-	<test name="Home page Test">
+	<!-- <test name="Home page Test">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
@@ -39,6 +39,6 @@
 		<classes>
 			<class name="com.qa.hubspot.tests.ContactsPageTest" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite>
