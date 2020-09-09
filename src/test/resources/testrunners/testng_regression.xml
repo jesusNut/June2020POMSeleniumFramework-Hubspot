@@ -9,19 +9,21 @@
 
 		<listener
 			class-name="com.qa.hubspot.listeners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.hubspot.listeners.TestAllureListener" />
 
 	</listeners>
 
 
 
 
-	<!-- <test name="Login page Test">
+	<test name="Login page Test">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.LoginPageTest" />
 		</classes>
-	</test> -->
+	</test>
 
 	<test name="Home page Test">
 		<parameter name="browser" value="chrome" />
@@ -31,12 +33,12 @@
 		</classes>
 	</test>
 
-<!-- 	<test name="Contacts page Test">
+	<test name="Contacts page Test">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.ContactsPageTest" />
 		</classes>
-	</test> -->
+	</test>
 
 </suite>
