@@ -9,10 +9,10 @@
 
 		<listener
 			class-name="com.qa.hubspot.listeners.ExtentReportListener" />
-		<listener
+		<!-- <listener
 			class-name="com.qa.hubspot.listeners.TestAllureListener" />
 		<listener
-			class-name="com.qa.hubspot.listeners.TesultsListener" />
+			class-name="com.qa.hubspot.listeners.TesultsListener" /> -->
 
 	</listeners>
 
