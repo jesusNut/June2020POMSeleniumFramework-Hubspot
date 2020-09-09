@@ -75,6 +75,12 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
+			<exclusions>
+                    <exclusion>
+                        <artifactId>xerces</artifactId>
+                        <groupId>xml-apis</groupId>
+                    </exclusion>       
+                </exclusions>
 			<version>4.1.0</version>
 		</dependency>
 
