@@ -8,6 +8,12 @@ import com.qa.hubspot.utils.Constants;
 import com.qa.hubspot.utils.ElementUtil;
 
 public class LoginPage extends BasePage {
+	
+	/**In all Page classes, the below webdriver reference is first instantiated 
+	 * in constructor and then is passed via page action methods to landing pages.
+	 * For example here doLogin() method returns the object of landing page i.e homepage.
+	 * While creating the object of the HomePage the below webdriver reference is used.
+	 * **/
 
 	private WebDriver driver;
 
