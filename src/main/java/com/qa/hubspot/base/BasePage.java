@@ -38,7 +38,7 @@ public class BasePage {
 	 * browser name
 	 * 
 	 * @param browsername
-	 * @return this returns the driver instance
+	 * @return this returns the ThreadLocal <WebDriver> instance
 	 */
 
 	public WebDriver init_driver(Properties prop) {
