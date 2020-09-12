@@ -11,7 +11,7 @@ pipeline {
 
         stage('chrome') {
           steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
+            sh 'mvn test -Denv=dev'
           }
         }
 
@@ -41,34 +41,7 @@ pipeline {
       }
     }
 
-    stage('Build Stage') {
-      parallel {
-        stage('Build Stage') {
-          steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
-          }
-        }
-
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-        stage('safari') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=safari'
-          }
-        }
-
-      }
-    }
+   
 
     
     stage('Publish reports') {
