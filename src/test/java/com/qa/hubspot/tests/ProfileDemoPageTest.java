@@ -20,7 +20,7 @@ public class ProfileDemoPageTest extends BaseTest {
 	@Test
 	public void checkStringProfile() {
 
-		Assert.assertEquals(demoPage.provideAString(), Constants.DEMO_STRING_FOR_PROFILEDEMO_CLASS);
+		Assert.assertEquals(profileDemoPage.provideAStringProfile(), Constants.DEMO_STRING_FOR_PROFILEDEMO_CLASS);
 		
 		
 	}
