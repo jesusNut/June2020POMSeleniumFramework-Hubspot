@@ -18,7 +18,7 @@
 
 
 	<test name="Login page Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.LoginPageTest" />
@@ -33,7 +33,7 @@
 		/> </classes> </test> -->
 		
 		
-	<test name="Demo
+	<!-- <test name="Demo
 		page Test">
 		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="https://app.hubspot.com/" />
@@ -48,6 +48,6 @@
 		<classes>
 			<class name="com.qa.hubspot.tests.ProfileDemoPageTest" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite>
