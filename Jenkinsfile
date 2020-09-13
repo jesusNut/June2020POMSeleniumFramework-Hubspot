@@ -18,23 +18,22 @@ pipeline {
       }
     }
 
-    stage('Build QA') {
+    stage('Build QA-Chrome') {
       parallel {
         stage('Build QA') {
           steps {
-            sh 'mvn clean install -DskipTests=true'
+            sh 'mvn clean install -Denv=qa'
           }
         }
 
-        stage('chrome') {
+      }
+    }
+    
+    stage('Build QA-Chrome-2') {
+      parallel {
+        stage('Build QA') {
           steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
+            sh 'mvn clean install -Denv=dev'
           }
         }
 
