@@ -11,64 +11,36 @@ pipeline {
 
         stage('chrome') {
           steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
+            sh 'mvn test -Denv=dev'
           }
         }
 
       }
     }
 
-    stage('Build QA') {
+    stage('Build QA-Chrome') {
       parallel {
         stage('Build QA') {
           steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
-
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
+            sh 'mvn clean install -Denv=qa'
           }
         }
 
       }
     }
-
-    stage('Build Stage') {
+    
+    stage('Build QA-Chrome-2') {
       parallel {
-        stage('Build Stage') {
+        stage('Build QA') {
           steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
-          }
-        }
-
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-        stage('safari') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=safari'
+            sh 'mvn clean install -Denv=dev'
           }
         }
 
       }
     }
+
+   
 
     
     stage('Publish reports') {
