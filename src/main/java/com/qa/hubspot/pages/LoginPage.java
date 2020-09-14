@@ -42,7 +42,7 @@ public class LoginPage extends BasePage {
 
 	public String getLoginPageTitle() {
 
-		return elementUtil.waitForTitlePresent(Constants.LOGIN_PAGE_TITLE, 10);
+		return elementUtil.waitForTitlePresent(Constants.LOGIN_PAGE_TITLE, 20);
 
 	}
 
