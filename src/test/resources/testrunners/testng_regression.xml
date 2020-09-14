@@ -18,13 +18,13 @@
 
 
 
-	<!-- <test name="Login page Test">
+	<test name="Login page Test">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.LoginPageTest" />
 		</classes>
-	</test> -->
+	</test> 
 
 	<!-- <test name="Home page Test"> <parameter name="browser" value="chrome" 
 		/> <parameter name="url" value="https://app.hubspot.com/" /> <classes> <class 
@@ -42,13 +42,13 @@
 			<class name="com.qa.hubspot.tests.DemoPageTest" />
 		</classes>
 	</test>
-	<!-- <test name="Profile Demo 
+	 <test name="Profile Demo 
 		page Test">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.ProfileDemoPageTest" />
 		</classes>
-	</test> -->
+	</test> 
 
 </suite>
