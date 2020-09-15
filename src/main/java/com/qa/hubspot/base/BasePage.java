@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +14,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.qa.hubspot.utils.OptionsManager;
 
@@ -55,9 +61,17 @@ public class BasePage {
 
 			WebDriverManager.chromedriver().setup();
 
-			// driver = new ChromeDriver(optionsManager.getChromeOptions());
+			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
 
-			tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
+				init_remoteWebDriver(browsername);
+
+			} else {
+
+				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
+
+			}
+
+			// driver = new ChromeDriver(optionsManager.getChromeOptions());
 
 		}
 
@@ -65,9 +79,17 @@ public class BasePage {
 
 			WebDriverManager.firefoxdriver().setup();
 
-			// driver = new FirefoxDriver();
+			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
 
-			tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
+				init_remoteWebDriver(browsername);
+
+			} else {
+
+				tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
+
+			}
+
+			// driver = new FirefoxDriver();
 
 		}
 
@@ -81,6 +103,41 @@ public class BasePage {
 		getDriver().get(prop.getProperty("url").trim());
 
 		return getDriver();
+
+	}
+
+	/**
+	 * This method will define the desired capabilities and will initialize the
+	 * driver with capability. This method will also connect framework's driver
+	 * instnace to Selenium GRID
+	 * 
+	 */
+
+	private void init_remoteWebDriver(String browserName) {
+
+		if (browserName.equalsIgnoreCase("chrome")) {
+
+			DesiredCapabilities caps = DesiredCapabilities.chrome();
+
+			caps.setCapability(ChromeOptions.CAPABILITY, optionsManager.getChromeOptions());
+
+			try {
+				tlDriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")), caps));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+
+			DesiredCapabilities caps = DesiredCapabilities.firefox();
+
+			caps.setCapability(FirefoxOptions.FIREFOX_OPTIONS, optionsManager.getFirefoxOptions());
+
+			try {
+				tlDriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")), caps));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
