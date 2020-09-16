@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Hub spot Test automtion regression suite" verbose="3"  >
-<!--  parallel="tests" thread-count="3" -->
+<suite name="Hub spot Test automtion regression suite" verbose="3" parallel="tests" thread-count="2"  >
 
 
 
@@ -34,23 +33,23 @@
 		/> </classes> </test> -->
 
 
-	<test name="Demo
+	<!-- <test name="Demo
 		page Test">
 		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.DemoPageTest" />
 		</classes>
-	</test>
+	</test> -->
 	
 	
-	<!--  <test name="Profile Demo 
+	  <test name="Profile Demo 
 		page Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="https://app.hubspot.com/" />
 		<classes>
 			<class name="com.qa.hubspot.tests.ProfileDemoPageTest" />
 		</classes>
-	</test>  -->
+	</test>  
 
 </suite>
