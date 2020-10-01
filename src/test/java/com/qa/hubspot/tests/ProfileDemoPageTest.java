@@ -27,6 +27,7 @@ public class ProfileDemoPageTest extends BaseTest {
 
 		log.warn("starting ----------->>>>>>>>>>>>>>---------checkStringProfile()");
 
+		
 		Assert.assertEquals(profileDemoPage.provideAStringProfile(), Constants.DEMO_STRING_FOR_PROFILEDEMO_CLASS);
 
 		log.warn("ending ----------->>>>>>>>>>>>>>---------checkStringProfile()");
